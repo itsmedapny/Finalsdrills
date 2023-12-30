@@ -30,10 +30,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const movieDetails = await getMovieDetails(movieId);
 
+        // JavaScript Code
         document.getElementById('moviePoster').src = IMAGE_PATH + movieDetails.poster_path;
         document.getElementById('movieTitle').innerText = movieDetails.title;
         document.getElementById('movieRating').innerText = `${movieDetails.vote_average} / 10`;
         document.getElementById('movieReleaseDate').innerText = movieDetails.release_date;
+        document.getElementById('movieCategory').innerText = `Category: ${movieDetails.category}`;
+        document.getElementById('movieDuration').innerText = `Duration: ${movieDetails.duration} minutes`;
         document.getElementById('movieOverview').innerText = movieDetails.overview;
 
         const similarMovies = await getSimilarMovies(movieId);
