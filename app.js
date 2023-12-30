@@ -87,34 +87,41 @@ function createMovieCards(movie) {
     `;
 }
 
-async function fetchUpcomingMovies() {
+async function fetchUpcomingMoviesForJanuary() {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`);
+        const currentDate = new Date();
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+
+        const apiKey = '1bfdbff05c2698dc917dd28c08d41096';
+        const apiUrl = 'https://api.themoviedb.org/3/movie/upcoming';
+        const language = 'en-US';
+
+        const response = await fetch(`${apiUrl}?api_key=${apiKey}&language=${language}&page=1&primary_release_date.gte=${firstDayOfMonth.toISOString().split('T')[0]}&primary_release_date.lte=${lastDayOfMonth.toISOString().split('T')[0]}`);
+        
         const responseData = await response.json();
         return responseData.results;
     } catch (error) {
-        console.error('Error in fetchUpcomingMovies:', error);
+        console.error('Error in fetchUpcomingMoviesForJanuary:', error);
         return [];
     }
 }
 
-async function getUpcomingMovies() {
+async function getUpcomingMoviesForJanuary() {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`);
-        const responseData = await response.json();
-
-        return responseData.results;
+        const response = await fetchUpcomingMoviesForJanuary();
+        return response;
     } catch (error) {
-        console.error('Error in getUpcomingMovies:', error);
+        console.error('Error in getUpcomingMoviesForJanuary:', error);
         return [];
     }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const upcomingMoviesData = await getUpcomingMovies();
+    const upcomingMoviesData = await getUpcomingMoviesForJanuary();
 
     const upcomingMoviesGrid = document.querySelector('.movies-container.upcoming .movies-grid');
-    upcomingMoviesGrid.innerHTML = upcomingMoviesData.slice(15, 20).map(movie => createMovieCards(movie)).join('');
+    upcomingMoviesGrid.innerHTML = upcomingMoviesData.map(movie => createMovieCards(movie)).join('');
 });
 
 
