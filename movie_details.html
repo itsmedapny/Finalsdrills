@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DapnyFilmFlickerHome</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .bgimage{
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        background-size: 100%;
+        width: 100%;
+        height: 100vh;
+    }
+    .menu{
+        width: 100%;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .leftmenu{
+        width: 20%;
+        line-height: 100Px;
+        float: left;
+    }
+    .leftmenu h4{
+        padding-left: 70px;
+        font-weight: bold;
+        color: #E8BC3A;
+        font-size: 22px;
+        font-family: 'montserrat', sans-serif;
+    }
+    .rightmenu{
+        width: 60%;
+        height: 100Px;
+        float: right;
+    }
+    .rightmenu ul{
+        margin-left: 200px;
+    }
+    .rightmenu ul li{
+        display: inline-block;
+        font-family: 'montserrat', sans-serif ;
+        list-style: none;
+        font-size: 15px;
+        color: #E8BC3A;
+        font-weight: bold;
+        line-height: 100px;
+        margin-left: 40px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .details img {
+        width: 30%;
+        margin-top: 10px;
+        padding-left: 60px;
+        align-items: left;
+
+    }
+    
+    .footer {
+        background-color: #E8BC3A; 
+        color: black; 
+        padding: 10px; 
+        text-align: center; 
+        font-size: small;
+    }
+    .container {
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 9px;
+        padding-left: 1px;
+       }
+
+
+       img {
+        float: left;
+      }
+
+</style>
+
+<body>
+    <div class="bgimage">
+        <div class="menu">
+        <nav>
+            <div class="logo">
+                <span>DapnyFilmFlicker </span>- Movie Details
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+            </label>
+            <ul>
+      
+                <li><a href="home.html">Home</a></li>
+                <li><a class="active" href="index.html">Movies</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="trending.html">Sign up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="similarMoviesContainer" class="container">
+    </div>
+    <script>
+        const API_KEY = '1bfdbff05c2698dc917dd28c08d41096';
+        document.addEventListener('DOMContentLoaded', async () => {
+      
+            const similarMoviesData = (await getSimilarMovies()).slice(1, 20);
+    
+          
+            const similarMoviesContainer = document.getElementById('similarMoviesContainer');
+    
+            
+            similarMoviesContainer.innerHTML = similarMoviesData.map(movie => createSimilarMovieCard(movie)).join('');
+        });
+    
+       
+        async function getSimilarMovies() {
+            const movieId = 346698;
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${API_KEY}`);
+            const responseData = await response.json();
+            return responseData.results;
+        }
+
+        function createSimilarMovieCard(movie) {
+            return `
+                <div class="similar-movie">
+                    <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" alt="${movie.title}">
+                    <div class="text">
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+    
+</body>
+</html>
+</div>
+</body>
+</html>
