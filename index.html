@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DapnyFilmFlicker</title>
+    
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <span>DapnyFilmFlicker </span>- All About Movies
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn"></label>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a class="active" href="index.html">Movies</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="trending.html">Sign up</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" placeholder="Search Movie">
+            <button>Search</button>
+        </div>
+
+        <div class="movies-container upcoming">
+            <h1 class="Trending">Coming Soon</h1>
+            <div class="movies-grid">
+            <a href="movie_details2.html?id=1" class="movie-link"> 
+                <div class="comingsoon">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+            </a>
+        </div>
+        </div>
+
+        <div class="movies-container trending">
+            <h1 class="Movies">Trending</h1>
+            <div class="movies-grid">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="movies-container favorites">
+            <h1 class="Movies">Available Movies</h1>
+            <div class="movies-grid">
+                <div class="img">
+                    <img src="https://unsplash.it/500/1000" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popupContainer">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <p id="popupRating"></p>
+            <p id="popupReleaseDate"></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 DapnyFilmFlicker. All rights reserved.</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
