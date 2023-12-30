@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DapnyFilmFlickerHome</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .bgimage{
+        background: url("sanas.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        background-size: 100%;
+        width: 100%;
+        height: 100vh;
+    }
+    .menu{
+        width: 100%;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .leftmenu{
+        width: 20%;
+        line-height: 100Px;
+        float: left;
+    }
+    .leftmenu h4{
+        padding-left: 70px;
+        font-weight: bold;
+        color: #E8BC3A;
+        font-size: 22px;
+        font-family: 'montserrat', sans-serif;
+    }
+    .rightmenu{
+        width: 60%;
+        height: 100Px;
+        float: right;
+    }
+    .rightmenu ul{
+        margin-left: 200px;
+    }
+    .rightmenu ul li{
+        display: inline-block;
+        font-family: 'montserrat', sans-serif ;
+        list-style: none;
+        font-size: 15px;
+        color: #E8BC3A;
+        font-weight: bold;
+        line-height: 100px;
+        margin-left: 40px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+   
+    .text{
+        width: 100%;
+        margin-top:280px ;
+        text-transform: uppercase;
+        text-align: center;
+        color: #E8BC3A;
+        font-family: 'Poppins', sans-serif ;
+    
+    }
+    .text h4{
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .text h1{
+        background-color: rgba(232, 188, 58, 0.9);
+        font-size: 62px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700px;
+        margin: 14px 0px;
+        color: black;
+    }
+    .text h3{
+        font-size: 15px;
+        font-family: 'open sans', sans-serif;
+    }
+    .btn{
+        background-color: black;
+        color: #E8BC3A;
+        font-family: 'Poppins', sans-serif;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+        width: 150px;
+        margin-top: 25px;
+        border: 3px solid #E8BC3A;
+        cursor: pointer;
+    }
+    .btn:hover{
+        background-color: #E8BC3A;
+        color: black;
+    }
+</style>
+<body>
+    <div class="bgimage">
+        <div class="menu">
+        <nav>
+            <div class="logo">
+                <span>DapnyFilmFlicker </span>- All About Home
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+            </label>
+            <ul>
+                <li><a class="active" href="home.html">Home</a></li>
+                <li><a href="index.html">Movies</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="trending.html">Sign up</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="text">
+        <h2>SEARCHING | WATCHING | DISCOVERING </h2>
+        <h1>Explore the Cinematic Universe</h1>
+        <h2> Get ready for an unforgettable cinematic journey! </h2>
+        <button class="btn"> SIGN UP</button>
+        <button onclick="window.location.href='index.html'" class="btn">MOVIES</button>
+    </div>
+
+</div>
+</body>
+</html>
