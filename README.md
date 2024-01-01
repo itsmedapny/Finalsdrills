@@ -1,4 +1,4 @@
-This repository houses a movie website called "Daphnee FilmFlicker," which leverages the API provided by The Movie Database (TMDB). 
+This repository houses a movie website called "DapnyFilmFlicker," which leverages the API provided by The Movie Database (TMDB). 
 The website is meticulously crafted using fundamental web technologies such as HTML, CSS, and JavaScript, highlighting a minimalistic 
 yet effective approach to web development.
 
@@ -25,8 +25,10 @@ The website is structured with distinct sections, offering users a seamless navi
 
 Additionally, users have the option to view the source code of the website, fostering transparency and openness about the development process. 
 The repository is a testament to the use of foundational web technologies to create an engaging and functional movie-centric platform. 
-Whether users are looking for information about movies, exploring trending content, or simply enjoying the available films, Daphnee FilmFlicker
+Whether users are looking for information about movies, exploring trending content, or simply enjoying the available films, DapnyFilmFlicker
 aims to provide a comprehensive and enjoyable experience without the necessity of signing up. 
+
+It was created to explore the API and how does it work, also to provide a movie website using API. 
 
 You can watch a video tutorial of this project, just click this link: https://drive.google.com/drive/folders/1tsK8q0_YuF5KyhAOSDsfu038COlJLiNI
 
